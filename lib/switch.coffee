@@ -17,7 +17,7 @@
 
 module.exports = (ip, breaker, value, callback) ->
 
-  get("http://#{ip}/stateFull.xml?relay#{breaker}State=#{value}&time=", (res) ->
+  get("http://#{ip}/state.xml?relay#{breaker}State=#{value}&time=", (res) ->
     received = ''
     res.on('data', (data) -> received += data.toString())
     res.on('end', ->

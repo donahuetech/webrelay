@@ -3,7 +3,7 @@
 
 module.exports = (ip, callback) ->
 
-  get("http://#{ip}/stateFull.xml", (res) ->
+  get("http://#{ip}/state.xml", (res) ->
     received = ''
     res.on('data', (data) -> received += data.toString())
     res.on('end', ->

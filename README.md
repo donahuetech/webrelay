@@ -17,6 +17,7 @@ http wrapper for operating a [ControlByWeb](http://www.controlbyweb.com/) relay 
 - `#setup.arp(host, mac, callback)` add an `arp` entry for `host`
 - `#setup.ping(host, callback)` ping the given `host`
 - `#switch(host, breaker, state, callback)` change the state of `breaker` to `state` and return the state of the relay (xml)
+- `#updateVariable(host, index, newVal, callback)` update an external variable at `index` to `newVal` and return the state of the relay (xml)
 - `#state(host, callback)` return the state of the relay (xml)
 
 ##### usage
@@ -38,6 +39,12 @@ webrelay.setup.run(host, mac, function(err, res) {
 webrelay.switch(host, 1, 1, function(err, res) {
   if (err) throw err;
   // breaker number 1's state is now 1
+});
+
+// update an external variable
+webrelay.updateVariable(host, 0, 10, function(err, res) {
+  if (err) throw err;
+  // extVar0 value is now 10
 });
 
 // get the state back (in xml)

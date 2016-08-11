@@ -11,6 +11,9 @@
     "clean": "rm -rf lib && mv src lib",
     "release": "npm run lint && npm test && npm run build && npm publish && npm run clean"
   },
+  "files": [
+    "lib"
+  ],
   "author": "Ant Cosentino <ant@io.co.za>",
   "license": "MIT",
   "devDependencies": {

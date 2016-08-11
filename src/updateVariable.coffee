@@ -1,9 +1,8 @@
-
 {get} = require('http')
 
-module.exports = (ip, callback) ->
+module.exports = (ip, index, value, callback) ->
 
-  get("http://#{ip}/stateFull.xml", (res) ->
+  get("http://#{ip}/state.xml?extvar#{index}=#{value}", (res) ->
     received = ''
     res.on('data', (data) -> received += data.toString())
     res.on('end', ->

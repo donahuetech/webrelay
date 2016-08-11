@@ -4,3 +4,4 @@ module.exports =
   switch: require('./switch')
   config: require('./config')
   state: require('./state')
+  updateVariable: require('./updateVariable')

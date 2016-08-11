@@ -10,9 +10,9 @@ describe 'webrelay', ->
 
   describe 'module', ->
 
-    it 'should export config, setup, state and switch', ->
+    it 'should export config, setup, state, switch and updateVariable', ->
 
-      expect(relay).to.contain.keys(['config', 'setup', 'state', 'switch'])
+      expect(relay).to.contain.keys(['config', 'setup', 'state', 'switch', 'updateVariable'])
 
   describe '#setup', ->
 
@@ -76,6 +76,15 @@ describe 'webrelay', ->
     it 'should respond with an error if the webrelay cannot be reached', (done) ->
 
       relay.switch('localhost', 0, 0, (err, res) ->
+        expect(res).to.not.be.ok
+        done()
+      )
+
+  describe '#updateVariable', ->
+
+    it 'should respond with an error if the webrelay cannot be reached', (done) ->
+
+      relay.switch('localhost', 0, 5, (err, res) ->
         expect(res).to.not.be.ok
         done()
       )

@@ -32,10 +32,10 @@
     "sinon-chai": "^2.7.0"
   },
   "bugs": {
-    "url": "https://github.com/io-digital/webrelay/issues"
+    "url": "https://github.com/eflexsystems/webrelay/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/io-digital/webrelay"
+    "url": "https://github.com/eflexsystemswebrelay"
   }
 }
